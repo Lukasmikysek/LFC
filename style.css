@@ -1,0 +1,373 @@
+/* ====== Liverpool FC fan web — hlavní styl ====== */
+
+:root {
+    --bg: #0a0c0f;
+    --bg-soft: #12161c;
+    --card: #161b22;
+    --line: #242b35;
+    --text: #e8eaed;
+    --muted: #9aa4b2;
+    --red: #c8102e;
+    --red-light: #ff3b54;
+    --gold: #f2c14e;
+    --radius: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+}
+
+/* ====== Hlavička a menu ====== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 28px;
+    background: rgba(10, 12, 15, 0.9);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--red-light);
+}
+
+.site-header nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.site-header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+}
+
+.site-header nav a.active {
+    color: #fff;
+    background: var(--red);
+}
+
+/* ====== Obsah ====== */
+
+main {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+}
+
+section {
+    margin-top: 72px;
+}
+
+h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 22px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background: var(--red);
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+p {
+    color: var(--muted);
+}
+
+a {
+    color: var(--red-light);
+}
+
+/* ====== Hero ====== */
+
+.hero {
+    padding: 90px 0 10px;
+    max-width: 720px;
+}
+
+.kicker {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 14px;
+}
+
+.lead {
+    font-size: 1.12rem;
+    margin: 20px 0 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 13px 26px;
+    border-radius: 999px;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--text);
+    margin-top: 18px;
+}
+
+/* ====== Statistiky ====== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 56px;
+}
+
+.stat {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 18px;
+    text-align: center;
+}
+
+.stat .num {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--red-light);
+    line-height: 1;
+}
+
+.stat .label {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* ====== Karty ====== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--red);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+}
+
+/* ====== Dvousloupcová sekce ====== */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.split img {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+}
+
+.split p + p {
+    margin-top: 14px;
+}
+
+/* ====== Časová osa (historie) ====== */
+
+.timeline {
+    border-left: 2px solid var(--line);
+    padding-left: 26px;
+    margin-left: 8px;
+}
+
+.timeline .item {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline .item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 3px solid var(--bg);
+}
+
+.timeline .year {
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+/* ====== Tabulka trofejí ====== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+th, td {
+    text-align: left;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+}
+
+th {
+    background: #1b212a;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+td:last-child {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ====== Galerie ====== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+figure {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+figcaption strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+/* ====== Zdroje ====== */
+
+.source-list {
+    list-style: none;
+}
+
+.source-list li {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+}
+
+.source-list span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.prompt {
+    background: #0d1117;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    color: var(--text);
+    font-style: italic;
+}
+
+/* ====== Patička ====== */
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 24px 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.site-footer p + p {
+    margin-top: 6px;
+}
