@@ -1,4 +1,4 @@
-# Liverpool FC — fanouškovský web
+# Liverpool FC
 
 > Greatest club in the world.
 
