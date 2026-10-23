@@ -2,8 +2,7 @@
 
 > Greatest club in the world.
 
-Školní projekt: moderní vícestránkový web vytvořený ve spolupráci s AI
-a verzovaný na GitHubu.
+
 
 ## Obsah webu
 
